@@ -1,26 +1,53 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { FaGoogle, FaApple } from "react-icons/fa";
-import {
-  MdEmail,
-  MdLock,
-  MdPerson,
-  MdCalendarToday,
-  MdMale,
-  MdFemale,
-  MdVisibility,
-  MdVisibilityOff,
-} from "react-icons/md";
+import { MdEmail, MdLock, MdVisibility, MdVisibilityOff } from "react-icons/md";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const SignIn = () => {
+  const { userSignIn, signInWithGoogle } = useContext(AuthContext);
+  const navigate = useNavigate();
+
   const [showPassword, setShowPassword] = useState(false);
-  const [selectedGender, setSelectedGender] = useState("");
+  const [error, setError] = useState("");
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
 
-  const handleGenderChange = (event) => {
-    setSelectedGender(event.target.value);
+  const handleSignIn = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const pass = form.password.value;
+
+    console.log(email, pass);
+
+    setError("");
+
+    if (!email || !pass) {
+      setError("Please enter Email and Password");
+      return;
+    }
+
+    userSignIn(email, pass)
+      .then((res) => {
+        console.log(res.user);
+        navigate("/");
+      })
+      .catch((error) => {
+        console.log(error.message);
+        setError("Wrong Email or password");
+      });
+  };
+
+  const handleGoogleSignUp = () => {
+    signInWithGoogle()
+      .then((res) => {
+        console.log(res.user);
+        navigate("/");
+      })
+      .catch((error) => console.log(error.message));
   };
 
   return (
@@ -32,13 +59,18 @@ const SignIn = () => {
         Welcome back, you’ve been missed!
       </p>
 
-      <div className="bg-white p-8 shadow-xl rounded-2xl">
-        <div className="flex justify-between mb-4">
-          <button className="flex items-center justify-center w-full px-4 py-2 border rounded-lg text-[#4E5D78] hover:bg-gray-100 mr-2 text-base font-medium">
-            <FaGoogle className="mr-2" /> Log in with Google
+      <div className="bg-white px-2 py-4 md:px-8 md:py-8 shadow-lg rounded-2xl">
+        <div className="flex justify-between gap-3 md:gap-4 mb-4">
+          <button
+            onClick={handleGoogleSignUp}
+            className="flex items-center justify-center w-full px-3 md:px-4 py-2 border rounded-lg text-[#4E5D78] hover:bg-gray-100 text-sm font-medium  md:text-base"
+          >
+            <FaGoogle className="mr-1 md:mr-2" />{" "}
+            <span className="">Log in with Google</span>
           </button>
-          <button className=" text-base font-medium flex items-center justify-center w-full px-4 py-2 border rounded-lg text-[#4E5D78] hover:bg-gray-100 ml-2 ">
-            <FaApple className="mr-2" /> Log in with Apple
+          <button className=" text-sm font-medium flex items-center justify-center w-full px-3 md:px-4 py-2 border rounded-lg text-[#4E5D78] hover:bg-gray-100 md:text-base">
+            <FaApple className="mr-1 md:mr-2" />{" "}
+            <span className="">Log in with Apple</span>
           </button>
         </div>
 
@@ -50,12 +82,13 @@ const SignIn = () => {
           <div className="border-t-2 w-1/2"></div>
         </div>
 
-        <form className="space-y-4">
+        <form className="space-y-4" onSubmit={handleSignIn}>
           <div className="relative">
             <MdEmail className="absolute left-3 top-3 text-gray-400" />
             <input
               type="email"
               id="email"
+              name="email"
               className="w-full pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300"
               placeholder="Your Email"
             />
@@ -66,8 +99,9 @@ const SignIn = () => {
             <input
               type={showPassword ? "text" : "password"}
               id="password"
+              name="password"
               className="w-full pl-10 pr-10 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300"
-              placeholder="Create Password"
+              placeholder="Enter Password"
             />
             <button
               type="button"
@@ -78,14 +112,17 @@ const SignIn = () => {
             </button>
           </div>
 
+          {error && <p className="text-red-700">* {error}</p>}
+
           <div className="flex items-center justify-between text-[#4E5D78] font-medium">
             <label className="inline-flex items-center">
               <input type="checkbox" className="form-checkbox text-blue-500" />
               <span className="ml-2">Remember me</span>
             </label>
-            <a href="#" className=" text-sm">
+
+            <Link to="/authentication/forgotPass" className=" text-sm">
               Forgot Password?
-            </a>
+            </Link>
           </div>
 
           <button
@@ -98,18 +135,11 @@ const SignIn = () => {
 
         <p className="text-center text-gray-500 mt-6">
           You haven't any account?{" "}
-          <a href="/" className="text-blue-500">
+          <Link to="/authentication/signUp" className="text-blue-500">
             Sign Up
-          </a>
+          </Link>
         </p>
       </div>
-
-      {/* <p className="text-center text-gray-500 mt-6">
-        You haven't any account?{" "}
-        <a href="#" className="text-blue-500">
-          Sign Up
-        </a>
-      </p> */}
     </div>
   );
 };

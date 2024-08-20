@@ -4,8 +4,9 @@ import { Outlet } from "react-router-dom";
 
 const SignUp_In_Section = () => {
   return (
-    <div className="font-roboto p-6">
+    <div className="font-roboto p-4 md:p-6">
       <Header_SignUp></Header_SignUp>
+
       <Outlet></Outlet>
     </div>
   );

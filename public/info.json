@@ -1,0 +1,255 @@
+[
+  {
+    "username": "John Doe",
+    "user_photo": "https://randomuser.me/api/portraits/men/1.jpg",
+    "is_active": true,
+    "last_active": null,
+    "post": {
+      "post_id": "a1b2c3",
+      "post_photo": [
+        {
+          "photo": "https://picsum.photos/id/1011/800/600"
+        }
+      ],
+      "post_caption": "Hiking in the mountains! #adventure",
+      "post_time": "1d",
+      "likes_count": 7,
+      "comments_count": 2,
+      "share_count": 5
+    }
+  },
+  {
+    "username": "Smith Johnson",
+    "user_photo": "https://randomuser.me/api/portraits/women/2.jpg",
+    "is_active": true,
+    "last_active": null,
+    "post": {
+      "post_id": "d4e5f6",
+      "post_photo": [
+        {
+          "photo": "https://picsum.photos/id/1035/800/600"
+        },
+        {
+          "photo": "https://picsum.photos/id/1011/800/600"
+        },
+        {
+          "photo": "https://picsum.photos/id/1059/800/600"
+        }
+      ],
+      "post_caption": "Delicious homemade pizza! #foodie",
+      "post_time": "3h",
+      "likes_count": 5,
+      "comments_count": 9,
+      "share_count": 3
+    }
+  },
+  {
+    "username": "Jones Williams",
+    "user_photo": "https://randomuser.me/api/portraits/men/3.jpg",
+    "is_active": true,
+    "last_active": null,
+    "post": {
+      "post_id": "g7h8i9",
+      "post_photo": [
+        {
+          "photo": "https://picsum.photos/id/1059/800/600"
+        }
+      ],
+      "post_caption": "Sunset by the beach. #relax",
+      "post_time": "2d",
+      "likes_count": 8,
+      "comments_count": 5,
+      "share_count": 7
+    }
+  },
+  {
+    "username": "White Brown",
+    "user_photo": "https://randomuser.me/api/portraits/women/4.jpg",
+    "is_active": false,
+    "last_active": "1 hr",
+    "post": {
+      "post_id": "j1k2l3",
+      "post_photo": [
+        {
+          "photo": "https://picsum.photos/id/1074/800/600"
+        }
+      ],
+      "post_caption": "Morning coffee vibes. #coffeelover",
+      "post_time": "6h",
+      "likes_count": 6,
+      "comments_count": 8,
+      "share_count": 4
+    }
+  },
+  {
+    "username": "Green Davis",
+    "user_photo": "https://randomuser.me/api/portraits/men/5.jpg",
+    "is_active": true,
+    "last_active": null,
+    "post": {
+      "post_id": "m4n5o6",
+      "post_photo": [
+        {
+          "photo": "https://picsum.photos/id/1084/800/600"
+        }
+      ],
+      "post_caption": "Cycling through the countryside. #bikelife",
+      "post_time": "4d",
+      "likes_count": 4,
+      "comments_count": 2,
+      "share_count": 2
+    }
+  },
+  {
+    "username": "Lisa Martinez",
+    "user_photo": "https://randomuser.me/api/portraits/women/6.jpg",
+    "is_active": false,
+    "last_active": "5 min",
+    "post": {
+      "post_id": "p7q8r9",
+      "post_photo": [
+        {
+          "photo": "https://picsum.photos/id/109/800/600"
+        }
+      ],
+      "post_caption": "New art project. #creativity",
+      "post_time": "1d",
+      "likes_count": 5,
+      "comments_count": 7,
+      "share_count": 1
+    }
+  },
+  {
+    "username": "Chris Garcia",
+    "user_photo": "https://randomuser.me/api/portraits/men/7.jpg",
+    "is_active": true,
+    "last_active": null,
+    "post": {
+      "post_id": "s1t2u3",
+      "post_photo": [
+        {
+          "photo": "https://picsum.photos/id/111/800/600"
+        }
+      ],
+      "post_caption": "Just finished a 5k run! #fitness",
+      "post_time": "7h",
+      "likes_count": 7,
+      "comments_count": 9,
+      "share_count": 6
+    }
+  },
+  {
+    "username": "Natalie Rodriguez",
+    "user_photo": "https://randomuser.me/api/portraits/women/8.jpg",
+    "is_active": false,
+    "last_active": "2 hr",
+    "post": {
+      "post_id": "v4w5x6",
+      "post_photo": [
+        {
+          "photo": "https://picsum.photos/id/115/800/600"
+        }
+      ],
+      "post_caption": "Best day at the theme park! #fun",
+      "post_time": "5d",
+      "likes_count": 5,
+      "comments_count": 3,
+      "share_count": 4
+    }
+  },
+  {
+    "username": "David Wilson",
+    "user_photo": "https://randomuser.me/api/portraits/men/9.jpg",
+    "is_active": true,
+    "last_active": null,
+    "post": {
+      "post_id": "y7z8a9",
+      "post_photo": [
+        {
+          "photo": "https://picsum.photos/id/117/800/600"
+        }
+      ],
+      "post_caption": "Exploring the city. #urbanlife",
+      "post_time": "2d",
+      "likes_count": 8,
+      "comments_count": 6,
+      "share_count": 5
+    }
+  },
+  {
+    "username": "Olivia Lee",
+    "user_photo": "https://randomuser.me/api/portraits/women/10.jpg",
+    "is_active": false,
+    "last_active": "3 min",
+    "post": {
+      "post_id": "b1c2d3",
+      "post_photo": [
+        {
+          "photo": "https://picsum.photos/id/120/800/600"
+        }
+      ],
+      "post_caption": "Yummy brunch with friends. #foodlover",
+      "post_time": "3h",
+      "likes_count": 7,
+      "comments_count": 5,
+      "share_count": 3
+    }
+  },
+  {
+    "username": "Ethan Walker",
+    "user_photo": "https://randomuser.me/api/portraits/men/11.jpg",
+    "is_active": true,
+    "last_active": null,
+    "post": {
+      "post_id": "e4f5g6",
+      "post_photo": [
+        {
+          "photo": "https://picsum.photos/id/122/800/600"
+        }
+      ],
+      "post_caption": "A day at the museum. #culture",
+      "post_time": "8h",
+      "likes_count": 9,
+      "comments_count": 3,
+      "share_count": 9
+    }
+  },
+  {
+    "username": "Sophia Harris",
+    "user_photo": "https://randomuser.me/api/portraits/women/12.jpg",
+    "is_active": false,
+    "last_active": "30 min",
+    "post": {
+      "post_id": "h7i8j9",
+      "post_photo": [
+        {
+          "photo": "https://picsum.photos/id/125/800/600"
+        }
+      ],
+      "post_caption": "Just finished a new book. #booklover",
+      "post_time": "1d",
+      "likes_count": 8,
+      "comments_count": 9,
+      "share_count": 4
+    }
+  },
+  {
+    "username": "Liam Young",
+    "user_photo": "https://randomuser.me/api/portraits/men/13.jpg",
+    "is_active": true,
+    "last_active": null,
+    "post": {
+      "post_id": "k1l2m3",
+      "post_photo": [
+        {
+          "photo": "https://picsum.photos/id/127/800/600"
+        }
+      ],
+      "post_caption": "Chilling by the pool. #summer",
+      "post_time": "2d",
+      "likes_count": 9,
+      "comments_count": 4,
+      "share_count": 8
+    }
+  }
+]

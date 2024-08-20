@@ -1,0 +1,38 @@
+.custom-prev, .custom-next {
+    width: 20px;
+    height: 20px;
+    background-color: white; /* Semi-transparent background */
+    color: black;
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10; /* Ensure the buttons are above the images */
+ 
+  }
+  
+  .custom-prev {
+    position: absolute;
+    left: 0;
+    top: 35%;
+    transform: translateY(-50%);
+  }
+  
+  .custom-next {
+    position: absolute;
+    right: 0;
+    top: 35%;
+    transform: translateY(-50%);
+  }
+  
+  /* .custom-prev:hover, .custom-next:hover {
+    background-color: rgba(0, 0, 0, 0.8); 
+  } */
+  
+  @media screen and (max-width: 768px) {
+    .custom-prev, .custom-next {
+      display: none;
+   
+    }
+  }
