@@ -203,7 +203,7 @@ export default function Mainsite() {
 
         <Outlet context={usersData}></Outlet>
       </div>
-      <div className="flex gap-4 items-center fixed bottom-0 md:hidden justify-between bg-[#FFFFFF] w-full px-4 pt-2.5 pb-[2px]">
+      <div className="flex gap-4 items-center fixed bottom-0 md:hidden justify-between bg-[#FFFFFF] w-full px-4 pt-2.5 pb-[2px] z-10">
         {mnavigation &&
           mnavigation?.map((item, index) => (
             <div

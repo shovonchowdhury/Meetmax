@@ -109,7 +109,7 @@ export default function Post({ data, usersData }) {
           )}
         </div>
 
-        <div className="flex text-[#4E5D7899] gap-4 mb-[14px]">
+        <div className="flex text-[#4E5D7899] gap-4 mt-3 mb-[12px]">
           <p>{comments_count} Comments</p>
           <p>{share_count} Shares</p>
         </div>
