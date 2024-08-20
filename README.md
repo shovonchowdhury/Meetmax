@@ -1,8 +1,15 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a Social Media Demo website named Meetmax that responsive as well. This project have mainly 2 part.....
 
-Currently, two official plugins are available:
+1. Auth: For authentication process i used firebase authentication. This part is divided into 3 features.
+   a. Sign Up
+   b. Sign In
+   C. Forgot Password System
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+2. Feed: This is the main section(Home) of the project. User can't access the page without signin or signup as i set it into a private route. There are some features like...
+   a. Create a post: Here i shown a demo that how a post can create although i havn't use any backend.
+   b. Like & comment: I introduced like & comment interaction.
+   c. Story : The story section can view with swipe. Here i used Swiper method.
+
+Challenges i have faced: I tried loader() for data fetching....which troubled me to live my project. Then i used useEffect() to fetch data.

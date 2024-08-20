@@ -17,7 +17,7 @@ export default function Posts({ usersData }) {
         Array.isArray(usersData) &&
         usersData.map((eachData, index) => (
           <div>
-            {console.log(eachData)}
+            {/* {console.log(eachData)} */}
             <Post
               key={eachData.post.post_id}
               data={eachData}

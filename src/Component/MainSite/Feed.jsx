@@ -502,7 +502,7 @@ const Feed = () => {
             name="search"
             type="search"
             placeholder="Search Friends!"
-            className="block  mb-7 w-full   py-2 px-11  pr-0 text-gray-900  placeholder:text-gray-400  sm:text-sm rounded-xl border-2"
+            className="block  mb-7 w-full   py-2 px-11  pr-0 text-gray-900  placeholder:text-gray-400  sm:text-sm rounded-xl border-2 outline-0"
           />
         </form>
         {/* <Carousel usersData={usersData}></Carousel> */}

@@ -19,6 +19,8 @@ import {
 
 export default function Post({ data, usersData }) {
   const [liked, setliked] = useState(0);
+  const [comment, setCommennt] = useState("");
+  const [commentStack, setCommentStack] = useState([]);
   const { user_photo, username, post } = data;
   const {
     post_photo,
@@ -34,6 +36,21 @@ export default function Post({ data, usersData }) {
   const handleLikeButton = () => {
     if (liked) setliked(0);
     else setliked(1);
+  };
+
+  const handleChange = (e) => {
+    //console.log(e.target.value);
+    setCommennt(e.target.value);
+  };
+  const commentHandle = () => {
+    if (comment) {
+      const temp = [...commentStack, comment];
+
+      setCommentStack(temp);
+      console.log(temp);
+
+      setCommennt("");
+    }
   };
   return (
     <div className="bg-white p-[18px] lg:rounded-2xl">
@@ -140,32 +157,18 @@ export default function Post({ data, usersData }) {
           alt=""
           className="h-[32px] w-[32px]   lg:h-[40px] lg:w-[40px] rounded-full"
         />
-        {/* <div className="flex items-center p-2 rounded-xl bg-gray-100 w-full ">
-          <input
-            type="text"
-            placeholder="Write a comment..."
-            className="flex-1 bg-transparent outline-none px-2"
-          />
-          <div className="flex items-center space-x-2">
-            <FiFile className="text-gray-500" />
-            <FiImage className="text-gray-500" />
-            <RiUserSmileLine className="text-gray-500" />
-          </div>
-        </div> */}
+
         <div className="relative w-full">
           <input
-            type="search"
+            type="text"
             id="default-search"
+            onChange={handleChange}
+            value={comment}
             className="block w-full px-4 h-[34px] pr-16 text-sm text-[#4E5D78] border border-gray-300 outline-0 rounded-md"
             placeholder="Write a comment..."
             required
           />
-          {/* <button
-            type="submit"
-            className="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-          >
-            Search
-          </button> */}
+
           <div className="flex absolute gap-1 end-2.5 bottom-2.5">
             <button>
               <FiFile className="text-gray-500" />
@@ -178,10 +181,51 @@ export default function Post({ data, usersData }) {
             </button>
           </div>
         </div>
-        <button className="px-3 h-[34px] bg-blue-100 rounded-md text-lg text-[#377DFF]">
+        <button
+          onClick={commentHandle}
+          className="px-3 h-[34px] bg-blue-100 rounded-md text-lg text-[#377DFF]"
+        >
           <RiSendPlane2Line />
         </button>
       </div>
+      {commentStack && (
+        <div className={`${commentStack && " mt-2 md:mt-3"} space-y-2`}>
+          {commentStack &&
+            commentStack.map((cmnt, index) => (
+              <div className="flex pl-2 gap-3 md:gap-5 ">
+                <img
+                  src={createPostImg}
+                  alt=""
+                  className="w-[35px] h-[35px] rounded-full mt-4"
+                />
+                <div className="w-full">
+                  <div className="w-full bg-gray-100 p-4 rounded-xl space-y-3">
+                    <div className="flex justify-between items-center">
+                      <div className="flex flex-col justify-center">
+                        <p className="text-sm text-[#4E5D78] font-medium mb-0">
+                          Saleh Ahmed
+                        </p>
+                        <span className="text-xs font-medium mt-0 text-gray-400">
+                          Just Now
+                        </span>
+                      </div>
+                      <div>
+                        <HiDotsHorizontal />
+                      </div>
+                    </div>
+                    <div>
+                      <p className="text-[#4E5D78]">{cmnt}</p>
+                    </div>
+                  </div>
+                  <div className="space-x-3 font-medium mx-2">
+                    <button className="text-gray-400 text-xs ">Like</button>
+                    <button className="text-gray-400 text-xs">Reply</button>
+                  </div>
+                </div>
+              </div>
+            ))}
+        </div>
+      )}
     </div>
   );
 }

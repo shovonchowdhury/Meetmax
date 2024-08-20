@@ -126,7 +126,7 @@ export default function Mainsite() {
         </div>
       </div>
       <div className="w-full lg:pl-[240px]">
-        <div className="lg:sticky z-50 top-0 flex h-16 w-full fixed shrink-0 items-center gap-x-[21px] bg-white px-4  sm:gap-x-6 sm:px-6 lg:px-0 lg:pr-6 mb-4">
+        <div className="lg:sticky z-50 top-0 flex h-16 w-full fixed shrink-0 items-center gap-x-[18px] bg-white px-4  sm:gap-x-6 sm:px-6 lg:px-0 lg:pr-6 mb-4">
           <img
             alt=""
             src={createPostImg}
@@ -139,14 +139,14 @@ export default function Mainsite() {
               </label>
               <MagnifyingGlassIcon
                 aria-hidden="true"
-                className="pointer-events-none absolute inset-y-[5px] left-4 h-full w-5 text-[#4E5D78]"
+                className="pointer-events-none absolute inset-y-[5px] left-2 lg:left-4 h-full w-5 text-[#4E5D78]"
               />
               <input
                 id="search-field"
                 name="search"
                 type="search"
                 placeholder="Search for something here..."
-                className="block mt-4 mb-1 w-full lg:w-4/6  py-2 px-11  pr-0 text-gray-900  placeholder:text-gray-400  sm:text-sm rounded-xl border-2"
+                className="block mt-4 mb-1 w-full lg:w-4/6  py-2 pl-7 pr-0  lg:pl-11 lg:pr-11  text-gray-900  placeholder:text-gray-400  lg:text-sm rounded-xl border-2 outline-0"
               />
             </form>
             <div className="flex items-center gap-x-4 lg:gap-x-6">
